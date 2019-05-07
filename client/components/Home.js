@@ -4,26 +4,26 @@ import Results from './Results';
 
 const Home = () => {
   const [ results, setResults ] = useState([]);
-  const [ loading, isLoading ] = useState(false);
+  const [ isLoading, setLoading ] = useState(false);
 
   const fetchResults = (evt) => {
     evt.preventDefault();
-    console.log(evt.target.query.value);
+
+    const query = evt.target.query.value;
+    setLoading(true);
 
     const fetchData = async() => {
-      const redditRes = await fetch('https://www.reddit.com/search.json?q=beatles&sort=new').then(res => res.json());
-      setResults(redditRes.data.children);
-      // console.log(data);
+      const redditResults = await fetch(`https://www.reddit.com/search.json?q=${query}&sort=new`).then(res => res.json());
+      setResults(redditResults.data.children);
+      setLoading(false);
     };
     fetchData();
-
   };
 
   return(
     <div>
-      { console.log(results)}
       <Input fetchQuery={fetchResults}/>
-      <Results results={results}/>
+      { isLoading ? 'Searching Reddit...' : <Results results={results} /> }
     </div>
   );
 };
