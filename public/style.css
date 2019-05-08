@@ -7,14 +7,91 @@ a {
   text-decoration: none;
 }
 
-.search-result {
+#search-section {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  /* position: absolute;
+  left: 12px;
+  right: 12px; */
+}
+
+.loading {
+  color: white;
+  padding: 12px;
+}
+
+#loading-screen {
+  color: white;
+}
+
+#results-section {
+  width: 90%;
+  display: flex;
+  margin-top: 16px;
+  flex-direction: column;
+}
+
+#form-title {
+  position: relative;
+  height: 96px;
+  width: 96px;
+  margin: 24px 0 8px 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+}
+
+form > input {
+  font-size: 18px;
+  margin: 16px;
+  width: 75%;
+  max-width: 500px;
+  padding: 8px 10px;
+  border-radius: 2px;
+  border: none;
+}
+
+form > button {
+  font-size: 18px;
+  margin: 8px;
+  border-radius: 2px;
+  border: none;
+  box-shadow: 0 4px 6px hsl(0, 0%, 10%);
+  background-color: hsl(14, 100%, 55%);
+  color: hsl(0, 0%, 100%);
+  padding: 6px 12px;
+  font-weight: 500;
+}
+
+.reddit-icon-bg {
+  background-color: white;
+  height: 60px;
+  width: 60px;
+  position: absolute;
+  top: 18px;
+  left: 18px;
+}
+
+.reddit-icon {
+  position: absolute;
+  z-index: 1;
+}
+
+.result-item {
   padding: 16px;
-  border: 1px solid black;
   max-height: 150px;
   overflow: hidden;
   display: flex;
   align-content: flex-start;
-  /* margin: 6px 0px; */
+  border-radius: 8px;
+  margin: 8px 0;
+  background-color: hsl(210, 40%, 20%);
+  box-shadow: 0 2px 2px 0px hsl(225, 56%, 10%);
 }
 
 .result-content {
@@ -29,7 +106,13 @@ a {
 
 .result-title a {
   text-decoration: none;
-  color: hsl(0, 0%, 95%);
+  color: hsl(220, 50%, 85%);
+  text-shadow: 0 2px 2px hsl(225, 50%, 15%)
+}
+
+.result-title a:hover {
+  border-bottom: 1.5px solid hsl(220, 10%, 100%, 70%);
+  padding-bottom: 2px;
 }
 
 .result-text > * {
@@ -51,14 +134,14 @@ a {
 
 .result-author {
   font-size: 14px;
-  color: hsl(0, 0%, 40%);
+  color:hsl(215, 25%, 60%);
 }
 
 .result-sub {
   font-size: 14px;
   font-weight: 600;
-  padding-right: 6px;
-  color:hsl(0, 0%, 95%);
+  padding-right: 8px;
+  color:hsl(215, 50%, 66%);
 }
 
 .result-thumbnail > img {

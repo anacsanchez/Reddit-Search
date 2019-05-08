@@ -21,9 +21,9 @@ const Search = () => {
   };
 
   return(
-    <div>
+    <div id="search-section">
       <SearchInput fetchQuery={fetchResults}/>
-      { isLoading ? 'Searching Reddit...' : <ResultsList results={results} /> }
+      { isLoading ? <div className="loading">Searching Reddit...</div> : <ResultsList results={results} /> }
     </div>
   );
 };
