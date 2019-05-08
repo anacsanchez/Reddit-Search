@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Input = ({ fetchQuery }) => {
+const SearchInput = ({ fetchQuery }) => {
   return (
     <div id="input-form">
       <form onSubmit={fetchQuery}>
@@ -11,4 +11,4 @@ const Input = ({ fetchQuery }) => {
   );
 };
 
-export default Input;
+export default SearchInput;

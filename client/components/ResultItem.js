@@ -1,11 +1,11 @@
 import React from 'react';
 import Markdown from 'markdown-to-jsx';
 
-const SearchResult = ({ result }) => {
+const ResultItem = ({ result }) => {
   const { author, selftext, title, subreddit, url, thumbnail } = result;
   return (
     <div className="search-result">
-      <div className="result-thumbnail"><img src={thumbnail == 'self' || thumbnail == 'default' ? null : thumbnail } /></div>
+      <div className="result-thumbnail"><img src={thumbnail === 'self' || thumbnail === 'default' ? null : thumbnail } /></div>
       <div className="result-content">
         <div className="result-title"><a href={url}>{title}</a></div>
         <div className="result-details">
@@ -18,4 +18,4 @@ const SearchResult = ({ result }) => {
   );
 };
 
-export default SearchResult;
+export default ResultItem;
