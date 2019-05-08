@@ -1,5 +1,4 @@
-const LiveReloadPlugin = require('webpack-livereload-plugin');
-const isDev = process.env.NODE_ENV === 'development';
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: './client/index.js',
@@ -7,7 +6,6 @@ module.exports = {
     path: __dirname,
     filename: './public/bundle.js'
   },
-  devtool: 'source-map',
   module: {
     rules: [
       {
@@ -17,7 +15,10 @@ module.exports = {
       }
     ]
   },
-  mode: 'development',
   target: 'node',
-  plugins: isDev ? [new LiveReloadPlugin({appendScriptTag: true})] : []
+  // plugins: [
+  //   new HtmlWebpackPlugin({
+  //     title: 'Production'
+  //   })
+  // ]
 };
