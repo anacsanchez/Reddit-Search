@@ -1,11 +1,11 @@
 import React from 'react';
-import SearchResult from './SearchResult';
+import ResultItem from './ResultItem';
 
 const Results = ({ results }) => {
   return (
-    <div>
+    <div id="results-section">
       { results.length ? results.map(result => (
-        <SearchResult key={result.data.id} result={result.data} />
+        <ResultItem key={result.data.id} result={result.data} />
       )) : null
     }
     </div>
