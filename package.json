@@ -8,8 +8,8 @@
     "build-client-watch": "webpack -w --config webpack.dev.js",
     "postinstall": "npm run build",
     "start": "node server",
-    "start-dev": "NODE_ENV='development' npm run build-client-watch & npm run start-server-dev",
-    "start-server-dev": "nodemon server --ignore public --ignore client"
+    "start-dev": "npm run build-client-watch & npm run start-server-dev",
+    "start-server-dev": "NODE_ENV='development' nodemon server --ignore public --ignore client"
   },
   "author": "Ana C. Sanchez",
   "license": "ISC",

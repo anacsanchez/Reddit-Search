@@ -1,7 +1,7 @@
 import React from 'react';
 import Markdown from 'markdown-to-jsx';
 
-const ResultItem = ({ resut }) => {
+const ResultItem = ({ result }) => {
   const { author, selftext, title, subreddit, url, thumbnail } = result;
   return (
     <div className="result-item">
