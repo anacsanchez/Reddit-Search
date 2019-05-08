@@ -7,13 +7,15 @@ a {
   text-decoration: none;
 }
 
-#search-section {
+#home, #search-section {
   display: flex;
   align-items: center;
   flex-direction: column;
-  /* position: absolute;
-  left: 12px;
-  right: 12px; */
+  /* width: 100%; */
+}
+
+#search-section {
+  width: 100%;
 }
 
 .loading {
@@ -26,13 +28,14 @@ a {
 }
 
 #results-section {
-  width: 90%;
   display: flex;
   margin-top: 16px;
   flex-direction: column;
+  padding: 16px;
+  width: 90%;
 }
 
-#form-title {
+#splash {
   position: relative;
   height: 96px;
   width: 96px;
@@ -43,15 +46,16 @@ form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 90%;
+  width: 100%;
 }
 
 form > input {
-  font-size: 18px;
+  font-size: 16px;
   margin: 16px;
   width: 75%;
-  max-width: 500px;
-  padding: 8px 10px;
+  min-width: 200px;
+  max-width: 400px;
+  padding: 10px 12px;
   border-radius: 2px;
   border: none;
 }
@@ -84,35 +88,43 @@ form > button {
 
 .result-item {
   padding: 16px;
-  max-height: 150px;
-  overflow: hidden;
   display: flex;
   align-content: flex-start;
   border-radius: 8px;
   margin: 8px 0;
   background-color: hsl(210, 40%, 20%);
   box-shadow: 0 2px 2px 0px hsl(225, 56%, 10%);
+  min-width: 250px;
+
 }
 
 .result-content {
   padding: 0px 4px 0px 18px;
+  flex-wrap: wrap;
 }
 
 .result-title {
   font-size: 20px;
-  padding-bottom: 10px;
+  padding: 0 8px 10px 0;
   font-weight: 600;
 }
 
 .result-title a {
   text-decoration: none;
-  color: hsl(220, 50%, 85%);
-  text-shadow: 0 2px 2px hsl(225, 50%, 15%)
+  color: hsl(220, 40%, 85%);
+  text-shadow: 0 2px 2px hsl(225, 50%, 15%);
+  line-height: 130%;
 }
 
 .result-title a:hover {
   border-bottom: 1.5px solid hsl(220, 10%, 100%, 70%);
   padding-bottom: 2px;
+}
+
+.result-text {
+  padding: 8px 8px 0 0;
+  overflow-y: hidden;
+  max-height: 100px;
 }
 
 .result-text > * {
@@ -128,8 +140,9 @@ form > button {
   font-size: 14px;
 }
 
-.result-text {
-  padding-top: 8px;
+.result-text a {
+  color:hsl(220, 90%,80%);
+  text-decoration: underline;
 }
 
 .result-author {
@@ -150,4 +163,35 @@ form > button {
 .result-details {
   display: flex;
   padding-left: 2px;
+  flex-wrap: wrap;
+}
+
+@media only screen and (max-width: 400px) {
+  #results-section {
+    width: 280px;
+  }
+  .result-item {
+    max-width: 250px;
+  }
+  .result-title {
+    max-width: 200px;
+    font-size: 14px;
+  }
+  .result-thumbnail > img {
+    width: 50px;
+  }
+  .result-author {
+    max-width: 60px;
+    font-size: 12px;
+  }
+  .result-text {
+    max-width: 200px;
+  }
+  .result-text > * {
+    font-size: 12px;
+    color: hsl(0, 0%, 85%);
+  }
+  .result-sub {
+    font-size: 12px;
+  }
 }
