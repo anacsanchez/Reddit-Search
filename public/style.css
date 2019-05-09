@@ -148,29 +148,45 @@ form > button {
   color:hsl(215, 25%, 60%);
 }
 
-.result-text {
+.result-text-preview {
   padding: 8px 8px 8px 0;
-  overflow-y: hidden;
   max-height: 100px;
-  min-height: 25px;
   mask-image: linear-gradient(to top, transparent, hsl(210, 40%, 20%) 25%);
   -webkit-mask-image: linear-gradient(to top, transparent, hsl(210, 40%, 20%) 25%);
 }
 
-.result-text h1 {
+.result-text-preview:hover {
+  cursor: pointer;
+}
+
+.result-text-container {
+  background-color: hsl(210, 50%, 15%);
+  box-shadow: 0px 2px 0px hsl(220, 0%, 50%, 20%);
+  border-radius: 4px;
+  margin-top: 16px;
+  overflow-y: auto;
+  max-height: 600px;
+}
+
+.result-text-inner {
+  min-height: 25px;
+  padding: 16px;
+}
+
+.result-text-inner h1, .result-text-preview h1 {
   font-size: 16px;
 }
 
-.result-text h2 {
+.result-text-inner h2, .result-text-preview h2 {
   font-size: 14px;
 }
 
-.result-text a {
+.result-text-inner a, .result-text-preview a {
   color:hsl(220, 90%,80%);
   text-decoration: underline;
 }
 
-.result-text > * {
+.result-text-inner > *, .result-text-preview > * {
   font-size: 14px;
   color: hsl(0, 0%, 85%);
   line-height: 130%;
@@ -194,8 +210,11 @@ form > button {
     max-width: 60px;
     font-size: 12px;
   }
-  .result-text {
+  .result-text-container {
     max-width: 200px;
+  }
+  .result-text-inner {
+    max-width: 120px;
   }
   .result-text > * {
     font-size: 12px;
