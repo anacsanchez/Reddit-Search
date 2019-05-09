@@ -1,6 +1,6 @@
 ## Reddit  Search
 
-A React app that connects to the Reddit API to display the newest search results based on user input.
+A web app that connects to the Reddit API to display the newest search results based on user input.
 
 ## Built with:
 * React - UI
