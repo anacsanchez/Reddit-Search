@@ -96,8 +96,15 @@ form > button {
   min-width: 250px;
 }
 
+.result-thumbnail {
+  min-width: 125px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .result-thumbnail > img {
-  width: 100px;
+  width: 125px;
 }
 
 .result-content {
@@ -196,5 +203,8 @@ form > button {
   }
   .result-sub {
     font-size: 12px;
+  }
+  .result-thumbnail {
+    min-width: 50px;
   }
 }
