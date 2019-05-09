@@ -96,6 +96,7 @@ form > button {
   min-width: 250px;
 }
 
+
 .result-thumbnail {
   min-width: 125px;
   display: flex;
@@ -108,13 +109,13 @@ form > button {
 }
 
 .result-content {
-  padding: 0px 4px 0px 18px;
+  padding: 0px 4px 0px 12px;
   flex-wrap: wrap;
 }
 
 .result-title {
   font-size: 20px;
-  padding: 0 8px 10px 0;
+  padding: 0 8px 10px 8px;
   font-weight: 600;
 }
 
@@ -132,7 +133,7 @@ form > button {
 
 .result-details {
   display: flex;
-  padding-left: 2px;
+  padding-left: 10px;
   flex-wrap: wrap;
 }
 
@@ -148,8 +149,13 @@ form > button {
   color:hsl(215, 25%, 60%);
 }
 
+.result-text-preview-container:hover {
+  box-shadow: inset 0px 0px 3px hsl(220, 0%,60%)
+}
+
 .result-text-preview {
-  padding: 8px 8px 8px 0;
+  margin-top: 6px;
+  padding: 4px 8px 8px 10px;
   max-height: 100px;
   mask-image: linear-gradient(to top, transparent, hsl(210, 40%, 20%) 25%);
   -webkit-mask-image: linear-gradient(to top, transparent, hsl(210, 40%, 20%) 25%);
@@ -157,6 +163,7 @@ form > button {
 
 .result-text-preview:hover {
   cursor: pointer;
+  box-shadow: inset 0px 0px 3px hsl(220, 0%,60%);
 }
 
 .result-text-container {
@@ -166,6 +173,10 @@ form > button {
   margin-top: 16px;
   overflow-y: auto;
   max-height: 600px;
+}
+
+.result-text-container:hover {
+  cursor: pointer;
 }
 
 .result-text-inner {

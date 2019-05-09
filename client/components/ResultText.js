@@ -12,10 +12,12 @@ const ResultText = ({ text }) => {
             <Markdown>{text}</Markdown>
           </div>
         </div> :
-        <div className="result-text-preview">
-            <Markdown>{text.slice(0, 1000)}</Markdown>
+        <div className="result-text-preview-container">
+          <div className="result-text-preview">
+              <Markdown>{text.slice(0, 1000)}</Markdown>
+          </div>
         </div>
-    }
+      }
     </div>
   );
 };
