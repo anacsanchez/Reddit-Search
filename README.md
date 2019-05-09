@@ -26,7 +26,7 @@ npm run start-dev
 
 App will be running on localhost:8080 by default.
 
-### Features
+## Features
 
 * Expand/collapse content on-click.
 * Loading statuses and a Javascript fallback.
