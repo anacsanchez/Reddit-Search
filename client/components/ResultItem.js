@@ -5,19 +5,25 @@ import { faFileImage, faCommentAlt } from '@fortawesome/free-regular-svg-icons';
 import { faFileAlt, faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
 
 const ResultItem = ({ result }) => {
-  const { author, selftext, title, subreddit, url, thumbnail } = result;
+  const { author, selftext, title, subreddit, url, thumbnail, permalink } = result;
   return (
     <div className="result-item">
       <div className="result-thumbnail">
-        { redditDefaults[thumbnail] ? <FontAwesomeIcon  color="hsl(220, 60%, 100%, 40%)" size="5x" icon={ redditDefaults[thumbnail]} /> : <img src={ thumbnail } /> }
+      {
+        redditDefaults[thumbnail] ?
+          <FontAwesomeIcon  color="hsl(220, 60%, 100%, 40%)" size="5x" icon={ redditDefaults[thumbnail]} />
+        : <a href={ url } target="_blank" rel="noreferrer noopener"><img src={ thumbnail } /></a>
+      }
       </div>
       <div className="result-content">
-        <div className="result-title"><a href={url} target="_blank" rel="noreferrer noopener">{title}</a></div>
+        <div className="result-title">
+          <a href={`https://www.reddit.com${permalink}`} target="_blank" rel="noreferrer noopener">{title}</a>
+        </div>
         <div className="result-details">
-          <div className="result-sub">r/{subreddit}</div>
+          <a href={`https://www.reddit.com/r/${subreddit}`} target="_blank" rel="noreferrer noopener" className="result-sub">r/{subreddit}</a>
           <div className="result-author">u/{author}</div>
         </div>
-        { selftext.length ? <ResultText text={ selftext } /> : null }
+        { selftext.length ? <ResultText isSpoiler={thumbnail == 'spoiler'} text={ selftext } /> : null }
       </div>
     </div>
   );
