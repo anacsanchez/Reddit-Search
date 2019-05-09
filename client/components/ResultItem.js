@@ -1,5 +1,5 @@
 import React from 'react';
-import Markdown from 'markdown-to-jsx';
+import ResultText from './ResultText';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFileImage, faCommentAlt } from '@fortawesome/free-regular-svg-icons';
 import { faFileAlt, faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
@@ -17,7 +17,7 @@ const ResultItem = ({ result }) => {
           <div className="result-sub">r/{subreddit}</div>
           <div className="result-author">u/{author}</div>
         </div>
-        <div className="result-text">{ thumbnail === 'spoiler' ? null : <Markdown>{selftext.slice(0, 1000)}</Markdown> }</div>
+        { selftext.length ? <ResultText text={ selftext } /> : null }
       </div>
     </div>
   );
