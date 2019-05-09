@@ -7,10 +7,10 @@ A React app that connects to the Reddit API to display the newest search results
 * Node.js - Server
 * [markdown-to-jsx](https://github.com/probablyup/markdown-to-jsx) - render markdown in Reddit posts
 
-### Link
+## Link
 [https://anacsanchez.com/reddit-search](https://anacsanchez.com/reddit-search)
 
-### Installation
+## Installation
 
 ```
 npm install
