@@ -1,13 +1,13 @@
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
-
-const PORT = 7000;
+const PORT = process.env.PORT || 8080;
 
 const server = http.createServer((req,res) => {
   console.log(req.url);
 
   let filePath;
+
 
   if (req.url == '/') {
     filePath = path.join(__dirname, '..', 'public/index.html');
