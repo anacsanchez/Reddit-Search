@@ -14,7 +14,12 @@ const Search = () => {
 
     const fetchData = async() => {
       const redditResults = await fetch(`https://www.reddit.com/search.json?q=${query}&sort=new`).then(res => res.json());
-      setResults(redditResults.data.children);
+      if(!redditResults.data.children.length) {
+        setResults('No Results Found');
+      }
+      else {
+        setResults(redditResults.data.children);
+      }
       setLoading(false);
     };
     fetchData();
