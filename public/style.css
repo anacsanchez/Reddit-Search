@@ -216,7 +216,7 @@ form > button {
   .result-text-inner {
     max-width: 120px;
   }
-  .result-text > * {
+  .result-text-inner > *, .result-text-preview > * {
     font-size: 12px;
     color: hsl(0, 0%, 85%);
   }
