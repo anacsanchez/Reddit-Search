@@ -24,6 +24,9 @@ a {
 
 #loading-screen {
   color: white;
+  padding: 36px;
+  font-size: 24px;
+  text-align: center;
 }
 
 #results-section {
@@ -69,6 +72,10 @@ form > button {
   color: hsl(0, 0%, 100%);
   padding: 6px 12px;
   font-weight: 500;
+}
+
+form > button:hover {
+  cursor: pointer;
 }
 
 .reddit-icon-bg {
@@ -142,6 +149,10 @@ form > button {
   font-weight: 600;
   padding-right: 8px;
   color:hsl(215, 50%, 66%);
+}
+
+.result-sub:hover {
+  text-decoration: underline;
 }
 
 .result-author {
