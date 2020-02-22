@@ -13,7 +13,9 @@ const Search = () => {
     setLoading(true);
 
     const fetchData = async() => {
-      const redditResults = await fetch(`https://www.reddit.com/search.json?q=${query}&sort=new`).then(res => res.json());
+      const redditResults = await fetch(`https://www.reddit.com/search.json?q=${query}&sort=new`, {
+        mode: "cors"
+      }).then(res => res.json());
       if(!redditResults.data.children.length) {
         setResults('No Results Found');
       }
