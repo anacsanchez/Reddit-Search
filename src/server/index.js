@@ -6,18 +6,22 @@ const path = require('path');
 const PORT = process.env.PORT || 6060;
 
 const server = http.createServer((req,res) => {
-  console.log(req.url);
 
-  let filePath;
+  console.log(req.headers)
+  const urlData = new URL(req.url, `http://${req.headers.host}`);
 
+  console.log(urlData)
 
-  if (req.url == '/') {
-    filePath = path.join(__dirname, '..', 'public/index.html');
-  }
-  else {
-    filePath = path.join(__dirname, '..', 'public', req.url);
-  }
+  const resFile = urlData.pathname == '/' || !urlData.pathname.length ? 'index.html' : urlData.pathname;
 
+  // if (req.url == '/') {
+  //   filePath = path.join(__dirname, '..', 'public', 'index.html');
+  // }
+  // else {
+  //   console.log('not root', req.url)
+  const filePath = path.join(__dirname, '..', 'public', resFile);
+  // }
+  console.log(filePath)
   const extname = String(path.extname(filePath)).toLowerCase();
 
   const mimeTypes = {
@@ -40,6 +44,7 @@ const server = http.createServer((req,res) => {
   const contentType = mimeTypes[extname] || 'application/octet-stream';
 
   fs.readFile(filePath, (err, content) => {
+    console.log(err, content);
     if(err) {
       if(err.code == 'ENOENT') {
         res.writeHead(400, { 'Content-Type': 'text/plain'});
