@@ -1,6 +1,7 @@
 version: '3.7'
 services:
   app:
+    image: anasanchez6547/reddit-search-anacsanchez
     build:
       context: .
       dockerfile: Dockerfile
